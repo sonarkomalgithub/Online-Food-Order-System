@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .p{
+                
+                margin: 2%;
+                padding: 5%;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            .a {
+                 display: inline-block;
+                 height: 50px; /*sets height of element*/
+                 width: 500px;
+                 margin-left: 400px;
+                 background:url(rbg.webp);
+                 background-size: cover;
+                 font-family: sans-serif;
+                }
+                .d{
+                background-color: rgba(0,0,0,0.5);
+                width: 100%;
+                border-radius: 7%;
+                box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+                color: white;
+                }
+                form{
+                    margin: 70px;
+                    padding-bottom: 50px;
+                    padding-top: 2px;
+                    width: 100%;
+                }
+                .btn{
+                    padding: 8px;
+                    margin: 10px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    border-radius: 5px;
+                    display: block;
+                    margin: auto;
+                    background-color:rgb(244, 174, 23);
+                }
+               
+        </style>
+    </head>
+    <body class="a">
+    <div class="d">
+        <h2 class="p">Registration Form</h2>
+        <form action="connect.php" method="post"> <!-- by using this we can connect our files to other one -->
+            First Name : <input type="text" name="firstname" placeholder="Enter Your First Name"><br><br>
+           <!--- Middle Name : <input type="text" name="middlename" placeholder="Enter Your Middle Name"><br><br>-->
+            Last Name : <input type="text" name="lastname" placeholder="Enter Your Last Name"><br><br>
+            <!--Birthday : <input type="date" name="birthday" placeholder="Enter Your BirthDate"><br><br>-->
+
+            
+            Gender : <input type="radio" name="gender" value="male" checked>Male
+            <input type="radio" name="gender" value="Female" checked> Female 
+            <input type="radio" name="gender" value="Others" checked> Others<br><br>
+
+            Citys : <select name="data" name="citys">
+                <option>Pune</option>
+                <option>Pimpri</option>
+                <option>Dehu</option>
+                <option>Alandi</option>
+            </select><br><br>
+
+            E-mail Address : <input type="email" placeholder="Enter Your Email" name="email"><br><br>
+
+            Password : <input type="password" name="psw" placeholder="Enter Your Password" name="password"><br><br>
+
+            Phone No : <input type="text" placeholder="Enter Your Phone No" name="number"><br><br> 
+
+            
+           <!-- Confirm Password : <input type="password" name="conpsw" name="password"><br><br>-->
+
+           <button class="btn">Submit</button>
+
+        </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--Chef-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<title>Food Website</title>
+<!-- for icons  -->
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<!-- bootstrap  -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<!-- for swiper slider  -->
+<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+<!-- fancy box  -->
+<link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+<!-- custom css  -->
+<link rel="stylesheet" href="style.css">
+
+
+<!--Nav bar full code with responsive-->
+<style>
+body {
+  margin:5px;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #f7f5f5;
+  text-align: center;
+  padding-left: 40px;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #0c0c0c;
+  text-align: center;
+  padding: 11px 25px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 13%;
+}
+
+.topnav a:hover {
+  background-color:transparent;
+  color: rgb(244, 174, 23);
+  background: linear-gradient(145deg, #dcdcdc, #ffffff);
+  box-shadow: 20px 20px 60px #cfcfd0, -20px -20px 60px #ffffff;
+
+}
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/***Chef Section***/
+
+#slider {
+  position: relative;
+  width: 50%;
+  height: 32vw;
+  margin: 150px auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+input[type=radio] {
+  position: relative;
+  top: 108%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: 0 15px 0 0;
+  opacity: 0.4;
+  transform: translateX(-83px);
+  cursor: pointer;
+  
+}
+
+
+input[type=radio]:nth-child(5) {
+  margin-right: 0px;
+}
+
+input[type=radio]:checked {
+  opacity: 1;
+}
+
+
+
+
+#slider label,
+#slider label img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms ease;
+}
+
+
+
+/* Slider Functionality */
+
+/* Active Slide */
+#s1:checked ~ #slide1,
+ #s2:checked ~ #slide2,
+  #s3:checked ~ #slide3,
+   #s4:checked ~ #slide4,
+    #s5:checked ~ #slide5 {
+  box-shadow: 0 13px 26px rgba(0,0,0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
+  transform: translate3d(0%, 0, 0px);
+}
+
+/* Next Slide */
+#s1:checked ~ #slide2,
+ #s2:checked ~ #slide3,
+  #s3:checked ~ #slide4,
+   #s4:checked ~ #slide5,
+    #s5:checked ~ #slide1 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(20%, 0, -100px);
+}
+
+
+/* Next to Next Slide */
+#s1:checked ~ #slide3,
+ #s2:checked ~ #slide4,
+  #s3:checked ~ #slide5,
+   #s4:checked ~ #slide1,
+    #s5:checked ~ #slide2 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(40%, 0, -250px);
+}
+
+/* Previous to Previous Slide */
+#s1:checked ~ #slide4,
+ #s2:checked ~ #slide5,
+  #s3:checked ~ #slide1,
+   #s4:checked ~ #slide2,
+    #s5:checked ~ #slide3 {
+  box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+  transform: translate3d(-40%, 0, -250px);
+}
+
+/* Previous Slide */
+#s1:checked ~ #slide5,
+ #s2:checked ~ #slide1,
+  #s3:checked ~ #slide2,
+   #s4:checked ~ #slide3,
+    #s5:checked ~ #slide4 {
+  box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+  transform: translate3d(-20%, 0, -100px);
+}
+
+</style>
+</head>
+<body>
+
+<div class="header-logo">
+    <a href="index.html">
+        <img src="logo1.png" width="100" height="36" alt="Logo">
+    </a>
+</div> 
+<div class="topnav" id="myTopnav">
+  
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+<section>
+<div class="header-right">
+    <form action="#" class="header-search-form for-des">
+        <input type="search" class="form-input" placeholder="Search Here...">
+        <button type="submit">
+            <i class="uil uil-search"></i>
+        </button>
+    </form>
+    <a href="javascript:void(0)" class="header-btn header-cart">
+        <i class="uil uil-shopping-bag"></i>
+        <p id="count">0</p>
+        <span class="cart-number">3</span>
+    </a>
+    <a href="javascript:void(0)" class="header-btn">
+        <i class="uil uil-user-md"></i>
+    </a>
+</div>
+
+</section>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+</div>
+<!-- Nav Section End-->
+
+<!--Home Section -->
+<div id="viewport">
+    <section class="main-banner" id="home">
+       <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="banner-text">
+                            <h1 class="h1-title">
+                                Welcome to our
+                                <span>India</span>
+                                restaurant.
+                            </h1>
+                            <p class="cont">"Indian food is the only one in the 
+                              world in which you can get sweetness, sourness, bitterness, and spiciness all at once."</p>
+                            <div class="banner-btn mt-4">
+                                <a href="#menu" class="sec-btn">Check our Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="hbg">
+                           <div class="home-bg">
+                              <img class="pbg" src="img/p.jpg" height="300px" width="400px" >
+                           </div>
+                         </div> 
+                          
+                        
+                        <div class="img-h1">
+                            <h5 class="h5-title">Maharashtrian Thali</h5>
+                            <p><span style="color: red;">Puran Poli</span> is a popular sweet flatbread from Maharashtra, 
+                              India.It is a delectable combination of a sweet lentil filling called “puran” encased in a 
+                              soft and thin wheat flour dough. 
+                              </p>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Home End-->
+
+<!--Brands Section-->
+<section class="brands-sec">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+            <div class="brand-title-mb-5">
+              <br><br><br><br><br><h5 class="h5-title-brand">Trusted by 70+ companies</h5>
+          </div>
+              <div class="brands-row">
+                  <div class="brands-box">
+                      <img src="img/Brands/bb1.png " width="250" height="150" alt="">
+                  </div>
+                  <div class="brands-box">
+                      <img src="img/Brands/bb2.png" width="300" height="300" alt="">
+                  </div>
+                  <div class="brands-box">
+                      <img src="img/Brands/b3.png" alt="">
+                  </div>
+                  <div class="brands-box">
+                      <img src="img/Brands/b4.png" alt="">
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!--AboutUs Section-->
+<section class="about-sec section" id="about">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="sec-title text-center mb-5">
+                  <p class="sec-sub-title mb-3">About Us</p>
+                  <h2 class="h2-title">Discover our <span>restaurant story</span></h2>
+                  <div class="sec-title-shape mb-4">
+                      <img src="img/title-shape.svg" alt="">
+                  </div>
+                  <p>Welcome to our restaurant, where culinary excellence meets warm hospitality. Our story is one of passion, 
+                    dedication, and a commitment to delivering an exceptional dining experience to our cherished guests.
+                    Our Journey
+                    At Indian Restaurant, our journey began with a simple yet profound vision – to create a haven for 
+                    food enthusiasts, a place where flavors come alive, and memories are made. Established in 
+                    2024, we embarked on this culinary adventure with the aim of offering a unique 
+                    blend of delectable cuisine, inviting ambiance, and impeccable service.
+                    Our Philosophy</p>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-8 m-auto">
+              <div class="about-video">
+                  <div class="about-video-img" style="background-image: url(img/about.jpg);">
+                  </div>
+                  <div class="play-btn-wp">
+                      <a href="img/video.mp4" data-fancybox="video" class="play-btn">
+                          <i class="uil uil-play"></i>
+
+                      </a>
+                      <span>Watch The Recipe</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section style="background-image: url(img/menu-bg.png);"
+class="our-menu section bg-light repeat-img" id="menu">
+<div class="sec-wp">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sec-title text-center mb-5">
+                    <p class="sec-sub-title mb-3">our menu</p>
+                    <h2 class="h2-title">wake up early, <span>eat fresh & healthy</span></h2>
+                    <div class="sec-title-shape mb-4">
+                        <img src="img/title-shape.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-tab-wp">
+            <div class="row">
+                <div class="col-lg-12 m-auto">
+                    <div class="menu-tab text-center">
+                        <ul class="filters">
+                            <div class="filter-active"></div>
+                            <li class="filter" data-filter=".all, .breakfast, .lunch, .dinner, .dessert ">
+                                <img src="img/menu-1.png" alt="">
+                                All
+                            </li>
+                            
+                            
+                            <li class="filter" data-filter=".breakfast">
+                                <img src="img/menu-2.png" alt="">
+                                Breakfast
+                            </li>
+                           
+                            <li class="filter" data-filter=".lunch">
+                                <img src="img/menu-3.png" alt="">
+                                Lunch
+                            </li>
+                            <li class="filter" data-filter=".dinner">
+                                <img src="img/menu-4.png" alt="">
+                                Dinner
+                            </li>
+                            <li class="filter" data-filter=".dessert ">
+                                <img src="img/menu-5.png" height="40px" width="40px">
+                                Dessert
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-list-row">
+            <div class="row g-xxl-5 bydefault_show" id="menu-dish">
+                <!--1-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d1.jpg" height="200px" width="200px" alt="">
+                            
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Masala Dosa</h3>
+                            <p>539 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>1</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 90</b>
+                                </li>
+                                <li>
+                                    <a href="file:///C:/Users/91937/Desktop/AKS/chekout.html">
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d2.jpg" height="200px" width="200px" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            4.3
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Vada Pav</h3>
+                            <p>197 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>1</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 30</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d3.jpg" height="200px" width="200px" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            4
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Dhokla</h3>
+                            <p>75 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 100</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d4.jpg" width="200px" height="200px" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            4.5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Paneer & Naan</h3>
+                            <p>325 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 379</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d5.jpg" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Shrikhand Puri</h3>
+                            <p>402 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 250</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d6.jpg" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Dal Baati Churma</h3>
+                            <p>1311 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 300</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--7-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp dinner" data-cat="dinner">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d7.jpg" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Paneer Biryani</h3>
+                            <p>153 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>1</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 200</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--8-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d8.jpg" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Avocado Toast</h3>
+                            <p>179.4 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>1</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 200</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--9-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d9.avif" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Sandwich with Fries</h3>
+                            <p>250 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 159</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--10-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp dessert" data-cat="dessert">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d10.jpg" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Choco Lava Cake</h3>
+                            <p>790 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 200</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--11-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp dessert" data-cat="dessert">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d11.jpg" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Mango Smoothie</h3>
+                            <p>130 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>1</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 159</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--12-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp dessert" data-cat="dessert">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d12.jpg" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Ice-Cream</h3>
+                            <p>110 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 300</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--13-->
+                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                    <div class="dish-box text-center">
+                        <div class="dist-img">
+                            <img src="img/Dish/d13.webp" height="200" width="200" alt="">
+                        </div>
+                        <div class="dish-rating">
+                            5
+                            <i class="uil uil-star"></i>
+                        </div>
+                        <div class="dish-title">
+                            <h3 class="h3-title">Fruit Salad</h3>
+                            <p>50 calories</p>
+                        </div>
+                        <div class="dish-info">
+                            <ul>
+                                <li>
+                                    <p>Type</p>
+                                    <b>Veg</b>
+                                </li>
+                                <li>
+                                    <p>Persons</p>
+                                    <b>2</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dist-bottom-row">
+                            <ul>
+                                <li>
+                                    <b>Rs. 300</b>
+                                </li>
+                                <li>
+                                    <button class="dish-add-btn">
+                                        <i class="uil uil-plus"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<!--two big section-->
+<section class="two-col-sec section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="sec-img-1">
+                    <img src="img/big1.webp" height="300px" width="400px" alt="">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="sec-text">
+                    <h2 class="xxl-title">Indian Snacks</h2>
+                    <p class="xx1">This snack list consists of some of the best Indian snacks that are sweet, 
+                        spicy, tangy, and utterly delicious! You'll love this collection of lip-smacking Indian 
+                        snack recipes. Whether it's for a party, festive celebrations like Holi or Diwali, or a 
+                        casual tea time with family, these crunchy Indian snacks are full of flavor</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="two-col-sec section pt-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6-order-lg-2-order-1">
+                <div class="sec-img-2">
+                    <img src="img/big2.jpg" height="300px" width="400px" alt="">
+                    
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-1 order-2">
+                <div class="sec-text">
+                    <h2 class="xxl-title">Indian Sweets</h2>
+                    <p class="xx2">India is known for its rich culture and the food that it offers. 
+                        The country provides with beautiful delicacies that leave everyone hungry for more. 
+                        As much as we are known for the spicy food, Indian sweets and desserts are a must for 
+                        any and every occasion. We celebrate all our good deeds and start our new beginnings 
+                        with sweets. Right from Jammu Kashmir to Tamil Nadu, each state has its own significant dish and is a must try for every tourist.
+
+                        Nearly all the Indian desserts include milk or ghee as their main constituent. 
+                        Most desserts are made by using fruits and nuts. Usually, the southern states of 
+                        India start their meals with sweet dishes, as it symbolizes a sweet beginning of the 
+                        occasion. It ends on a sweet note as well.</p>
+                    
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+<!--Table Book Section-->
+<section class="book-table section bg-light">
+    <div class="book-table-shape">
+        <img src="img/table-leaves-shape.png" alt="">
+    </div>
+
+    <div class="book-table-shape book-table-shape2">
+        <img src="img/table-leaves-shape.png" alt="">
+    </div>
+
+    <div class="sec-wp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sec-title text-center mb-5">
+                        <p class="sec-sub-title mb-3">Book Table</p>
+                        <h2 class="h2-title">Opening Table</h2>
+                        <div class="sec-title-shape mb-4">
+                            <img src="img/title-shape.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-table-info">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <div class="table-title text-center">
+                            <h3>Monday to Thrusday</h3>
+                            <p>9:00 am - 22:00 pm</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="call-now text-center">
+                            <i class="uil uil-phone"></i>
+                            <a href="tel:+91-8866998866">+91 - 8866998866</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="table-title text-center">
+                            <h3>Friday to Sunday</h3>
+                            <p>11::00 am to 20:00 pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--Gallery Section-->
+<section id="gallery">
+<main>
+    <img src="img/berry.png"  alt="" class="bg">
+    <img src="img/leaf.png"  alt="" class="bg2">
+  </main>
+ 
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 10</div>
+      <img src="img/bt1.jpg" style="width:100%" height="400px">
+      <div class="text">Fruit Salad</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 10</div>
+      <img src="img/bt2.jpg" style="width:100%" height="400px">
+      <div class="text">Pancake</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 10</div>
+      <img src="img/bt3.jpg" style="width:100%" height="400px">
+      <div class="text">Choco Lava Cake with Ice Cream</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 10</div>
+        <img src="img/bt4.jpg" style="width:100%" height="400px">
+        <div class="text">Fruit Toast</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 10</div>
+        <img src="img/bt5.jpg" style="width:100%" height="400px">
+        <div class="text">Mango Lassi</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 10</div>
+        <img src="img/bt6.jpg" style="width:100%" height="400px">
+        <div class="text">Pizza</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 10</div>
+        <img src="img/bt7.jpg" style="width:100%" height="400px">
+        <div class="text">Burger</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">8 / 10</div>
+        <img src="img/bt8.jpg" style="width:100%" height="400px">
+        <div class="text">Cold Coffee</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">9 / 10</div>
+        <img src="img/bt9.jpg" style="width:100%" height="400px">
+        <div class="text">Chaat Masala</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">10 / 10</div>
+        <img src="img/bt10.jpg" style="width:100%" height="400px">
+        <div class="text">Steam Momos</div>
+      </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+      <span class="dot" onclick="currentSlide(5)"></span> 
+      <span class="dot" onclick="currentSlide(6)"></span> 
+      <span class="dot" onclick="currentSlide(7)"></span> 
+      <span class="dot" onclick="currentSlide(8)"></span> 
+      <span class="dot" onclick="currentSlide(9)"></span> 
+      <span class="dot" onclick="currentSlide(10)"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+</section>
+
+    <!--Team Section-->
+   <section class="our-team section">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sec-title text-center mb-5">
+                            <p class="sec-sub-title mb-3">Our Team</p>
+                            <h2 class="h2-title">Meet our Chefs</h2>
+                            <div class="sec-title-shape mb-4">
+                                <img src="img/title-shape.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="slider">
+            <input type="radio" name="slider" id="s1" checked>
+            <input type="radio" name="slider" id="s2">
+            <input type="radio" name="slider" id="s3">
+            <input type="radio" name="slider" id="s4">
+            <input type="radio" name="slider" id="s5">
+          
+            <label for="s1" id="slide1"><img src="img/chef1.jpg" alt=""></label>
+            <label for="s2" id="slide2"><img src="img/chef2.jpeg" alt=""></label>
+            <label for="s3" id="slide3"><img src="img/chef3.jpg" alt=""></label>
+            <label for="s4" id="slide4"><img src="img/chef4.jpg" alt=""></label>
+            <label for="s5" id="slide5"><img src="img/chef5.jpg" alt=""></label>
+          </section>
+    </section>
+
+   
+
+      <!--Testimonials Section-->
+      <section class="testimonials section bg-light">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sec-title text-center mb-5">
+                            <p class="sec-sub-title mb-3">What they say</p>
+                            <h2 class="h2-title">What our customers <span>say about us</span></h2>
+                            <div class="sec-title-shape mb-4">
+                                <img src="img/title-shape.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="testimonials-img">
+                            <img src="img/testimonial-img.png" style="width: 100%;" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(img/Testimonials/t1.jpg);">
+                                            
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:85%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            Nilay Hirpara
+                                        </h3>
+                                        <p>Delicious food and cozy ambiance make this 
+                                            restaurant a must-visit! A delightful culinary experience 
+                                            that leaves you wanting more</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(img/Testimonials/t2.jpg);">
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:80%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            Ravi Kumawat
+                                        </h3>
+                                        <p>Delicious flavors and cozy ambiance make dining at Indian Restaurant a 
+                                            delightful experience.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(img/Testimonials/t3.jpg);">
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:89%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            Navnit Kumar
+                                        </h3>
+                                        <p>Exceptional flavors and cozy ambiance make dining at Restaurant an absolute delight. 
+                                            Each dish is a culinary masterpiece, leaving me eager for my next visit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="testimonials-box">
+                                    <div class="testimonial-box-top">
+                                        <div class="testimonials-box-img back-img"
+                                            style="background-image: url(img/Testimonials/t4.jpg);">
+                                        </div>
+                                        <div class="star-rating-wp">
+                                            <div class="star-rating">
+                                                <span class="star-rating__fill" style="width:100%"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="testimonials-box-text">
+                                        <h3 class="h3-title">
+                                            Somyadeep Bhowmik
+                                        </h3>
+                                        <p>Delightful flavors and attentive service make this restaurant a must-visit in town!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FAQ Section-->
+    <section class="faq-sec section-repeat-img" style="background-image: url(assets/images/faq-bg.png);">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sec-title text-center mb-5">
+                            <p class="sec-sub-title mb-3">faqs</p>
+                            <h2 class="h2-title">Frequently <span>asked questions</span></h2>
+                            <div class="sec-title-shape mb-4">
+                                <img src="img/title-shape.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-row">
+                    <div class="faq-box">
+                        <h4 class="h4-title">What are the login hours?</h4>
+                        <p>Generally, online food systems operate 24/7 to accommodate various user needs and time zones.
+                            But offline timeing show in book tabel section.
+                        </p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">What do i get my refund?</h4>
+                        <p>Thank you for reaching out to us regarding your refund.
+                            Refunds are typically processed within 5-7 hours from the date 
+                            of the refund request. However, the exact time it takes for the refund to 
+                            appear in your account may vary depending on your payment provider or bank.</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">How long it will take food to arrive?</h4>
+                        <p>The estimated delivery time depends on several factors, including the time of day, 
+                            your location, and the restaurant's preparation time. On average, deliveries typically 
+                            take between 30 to 60 minutes.</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">Does your restaurant has both veg and non veg?</h4>
+                        <p>Thank you for your inquiry! Our restaurant is dedicated to providing delicious 
+                            vegetarian meals.We specialize exclusively in vegetarian cuisine and do not 
+                            offer non-vegetarian dishes</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">What is cost of food delivery?</h4>
+                        <p> there is a standard base fee for delivery, which typically covers the cost of transportation. 
+                            This fee can vary depending on the distance between the restaurant and the delivery address.</p>
+                    </div>
+                    <div class="faq-box">
+                        <h4 class="h4-title">Who is eligible for pro membership?</h4>
+                        <p>You must have an active account with our online food app. 
+                            If you haven't signed up yet, you can easily create an account 
+                            through our app or website. </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Blog Section -->
+    <div class="bg-pattern bg-light repeat-img"
+                style="background-image: url(img/blog-pattern-bg.png);">
+                <section class="blog-sec section" id="blog">
+                    <div class="sec-wp">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="sec-title text-center mb-5">
+                                        <p class="sec-sub-title mb-3">Our blog</p>
+                                        <h2 class="h2-title">Latest Publications</span></h2>
+                                        <div class="sec-title-shape mb-4">
+                                            <img src="img/title-shape.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="blog-box">
+                                        <div class="blog-img back-img"
+                                            style="background-image: url(img/blog/blog1.jpeg);"></div>
+                                        <div class="blog-text">
+                                            <p class="blog-date">September.15.2024</p>
+                                            <a href="#" class="h4-title">Energy Drink which you can make at home.</a>
+                                            <p>Healthy energy drinks benefit athletes and fitness enthusiasts by 
+                                                boosting endurance and performance</p>
+                                            <a href="#" class="sec-btn">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="blog-box">
+                                        <div class="blog-img back-img"
+                                            style="background-image: url(img/blog/blog2.avif);"></div>
+                                        <div class="blog-text">
+                                            <p class="blog-date">October.15.2024</p>
+                                            <a href="#" class="h4-title">The classic combo</a>
+                                            <p>The "Classic Combo Snacks" typically include a selection of popular and 
+                                                complementary snacks that cater to various tastes</p>
+                                            <a href="#" class="sec-btn">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="blog-box">
+                                        <div class="blog-img back-img"
+                                            style="background-image: url(img/blog/blog3.avif);"></div>
+                                        <div class="blog-text">
+                                            <p class="blog-date">November.15.2024</p>
+                                            <a href="#" class="h4-title">Bpq Grilled </a>
+                                            <p>BBQ grilled foods are perfect for outdoor gatherings, summer picnics, 
+                                                and parties, offering a hearty and flavorful meal optionIt seems like you are referring to "BBQ Grilled" items. .</p>
+                                            <a href="#" class="sec-btn">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+    </div>
+    <!--News Section-->
+<section class="newsletter-sec section pt-0">
+    <div class="sec-wp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 m-auto">
+                    <div class="newsletter-box text-center back-img white-text"
+                        style="background-image: url(img/news.jpg);">
+                        <div class="bg-overlay dark-overlay"></div>
+                        <div class="sec-wp">
+                            <div class="newsletter-box-text">
+                                <h2 class="h2-title">Subscribe our newsletter</h2>
+                                <p>This is Lorem ipsum dolor sit amet consectetur adipisicing elit ad
+                                    veritatis.</p>
+                            </div>
+                            <form action="#" class="newsletter-form">
+                                <input type="email" class="form-input"
+                                    placeholder="Enter your Email Here" required>
+                                <button type="submit" class="sec-btn primary-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- footer starts  -->
+ <footer class="site-footer" id="contact">
+    <div class="top-footer section">
+        <div class="sec-wp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="footer-info">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="logo1.png" width="100" height="36" alt="Logo">
+                                </a>
+                            </div>
+                            <p>Food is not just fuel,its an experience.
+                            </p>
+                            <div class="social-icon">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="uil uil-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="uil uil-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="uil uil-github-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="uil uil-youtube"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="footer-flex-box">
+                            <div class="footer-table-info">
+                                <h3 class="h3-title">open hours</h3>
+                                <ul>
+                                    <li><i class="uil uil-clock"></i> Mon-Thurs : 9am - 22pm</li>
+                                    <li><i class="uil uil-clock"></i> Fri-Sun : 11am - 22pm</li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu food-nav-menu">
+                                <h3 class="h3-title">Links</h3>
+                                <ul class="column-2">
+                                    <li>
+                                        <a href="#home" class="footer-active-menu">Home</a>
+                                    </li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#menu">Menu</a></li>
+                                    <li><a href="#gallery">Gallery</a></li>
+                                    <li><a href="#blog">Blog</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <h3 class="h3-title">Company</h3>
+                                <ul>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Cookie Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2024 <span class="name">Komal Sonar</span>All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="scrolltop"><i class="uil uil-angle-up"></i></button>
+        </div>
+    </div>
+    
+        
+</footer>
+
+
+
+
+    
+      
+      
+  
+  
+
+
+    
+
+
+
+      
+</div>
+</body>
+</html>
